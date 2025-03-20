@@ -13,10 +13,16 @@
   {{- end -}}
 {{- end -}}
 {{- $attributes := merge .Attributes (dict "alt" .Text "src" $src "title" (.Title | transform.HTMLEscape) "loading" "lazy") -}}
+
+<figure>
 <img
   {{- range $k, $v := $attributes -}}
     {{- if $v -}}
       {{- printf " %s=%q" $k $v | safeHTMLAttr -}}
     {{- end -}}
   {{- end -}}>
+  {{ if .Text}}
+    <figcaption>{{ .Text | safeHTML }}</figcaption>
+  {{ end }}
+</figure>
 {{- /**/ -}}
