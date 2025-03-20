@@ -1,0 +1,21 @@
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['$$', '$$']],  // block
+      inlineMath: [['$', '$']],     // inline
+      tags: 'ams',
+      packages: {
+        '[+]': ['mathtools', 'physics']
+      }
+    },
+    loader: {
+      load: ['[tex]/mathtools', '[tex]/physics', 'ui/safe']
+    },
+    options: {
+      safeOptions: {
+        idPattern: /^mjx-(?:eqn:.+|[-a-zA-Z0-9_.:]+)$/  // Pattern for allowed ids
+      }
+    }
+  };
+</script>
